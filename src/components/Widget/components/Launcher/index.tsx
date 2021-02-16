@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import Badge from './components/Badge';
-import { GlobalState } from '../../../../store/types';
-import { setBadgeCount } from '../../../../store/actions';
+import { GlobalState } from '@types';
+import { setBadgeCount } from '@actions';
 
 import './style.scss';
 
-const openLauncher = require('../../../../../assets/launcher_button.svg') as string;
+// const openLauncher = require('../../../../../assets/launcher_button.svg') as string;
+const openLauncher = require('../../../../../assets/chat-bubbles-with-ellipsis.svg') as string;
 const close = require('../../../../../assets/clear-button.svg') as string;
 
 type Props = {
@@ -36,6 +37,7 @@ function Launcher({ toggle, chatId, openLabel, closeLabel }: Props) {
       {showChat ?
         <img src={close} className="rcw-close-launcher" alt={openLabel} /> :
         <img src={openLauncher} className="rcw-open-launcher" alt={closeLabel} />
+        // <img src={openLauncher} className="rcw-open-launcher" alt={closeLabel} />
       }
     </button>
   );
