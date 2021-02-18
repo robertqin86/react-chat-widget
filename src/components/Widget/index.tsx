@@ -60,13 +60,15 @@ function Widget({
   const handleMessageSubmit = (event) => {
     event.preventDefault();
     const userInput = event.target.message.value;
-    
-    if (!userInput.trim()) {      
-      return;      
+
+    if (!userInput.trim()) {
+      return;
     }
 
     handleSubmit?.(userInput);
-    dispatch(addUserMessage(userInput));
+    if (!handleSubmit) {
+      dispatch(addUserMessage(userInput));
+    }
     handleNewUserMessage(userInput);
     event.target.message.value = '';
   }
