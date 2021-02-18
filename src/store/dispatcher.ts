@@ -1,27 +1,35 @@
-import { ElementType } from 'react';
+import { ElementType } from "react";
+import { LinkParams, ImageState } from '@types';
 
-import store from '.';
-import * as actions from './actions';
-import { LinkParams, ImageState } from './types';
+import store from ".";
+import * as actions from "./actions";
 
-export function addUserMessage(text: string, id?: string) {
-  store.dispatch(actions.addUserMessage(text, id));
+export function addUserMessage(text: string, id?: string, date?: Date) {
+  store.dispatch(actions.addUserMessage(text, id, date));
 }
 
-export function addResponseMessage(text: string, id?: string) {
-  store.dispatch(actions.addResponseMessage(text, id));
+export function addResponseMessage(text: string, id?: string, date?: Date) {
+  store.dispatch(actions.addResponseMessage(text, id, date));
 }
 
-export function addLinkSnippet(link: LinkParams, id?: string) {
-  store.dispatch(actions.addLinkSnippet(link, id));
+export function addLinkSnippet(link: LinkParams, id?: string, date?: Date) {
+  store.dispatch(actions.addLinkSnippet(link, id, date));
 }
 
 export function toggleMsgLoader() {
   store.dispatch(actions.toggleMsgLoader());
 }
 
-export function renderCustomComponent(component: ElementType, props: any, showAvatar = false, id?: string) {
-  store.dispatch(actions.renderCustomComponent(component, props, showAvatar, id));
+export function renderCustomComponent(
+  component: ElementType,
+  props: any,
+  showAvatar = false,
+  id?: string,
+  date?: Date
+) {
+  store.dispatch(
+    actions.renderCustomComponent(component, props, showAvatar, id, date)
+  );
 }
 
 export function toggleWidget() {
@@ -40,7 +48,9 @@ export function isWidgetOpened(): boolean {
   return store.getState().behavior.showChat;
 }
 
-export function setQuickButtons(buttons: Array<{ label: string, value: string | number }>) {
+export function setQuickButtons(
+  buttons: Array<{ label: string; value: string | number }>
+) {
   store.dispatch(actions.setQuickButtons(buttons));
 }
 

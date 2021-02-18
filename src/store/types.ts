@@ -45,6 +45,7 @@ export interface BehaviorState {
 
 export interface MessagesState {
   messages: (Message | Link | CustomCompMessage)[];
+  messageIDs: object;
   badgeCount: number;
 }
 

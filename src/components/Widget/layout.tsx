@@ -58,9 +58,9 @@ function WidgetLayout({
   zoomStep,
 }: Props) {
   const dispatch = useDispatch();
-  const { dissableInput, showChat, visible } = useSelector((state: GlobalState) => ({
+  const { disableInput, showChat, visible } = useSelector((state: GlobalState) => ({
     showChat: state.behavior.showChat,
-    dissableInput: state.behavior.disabledInput,
+    disableInput: state.behavior.disabledInput,
     visible: state.preview.visible,
   }));
 
@@ -74,7 +74,7 @@ function WidgetLayout({
       messageRef.current = null;
     }
   }, [showChat])
-  
+
   const eventHandle = evt => {
     if(evt.target && evt.target.className === 'rcw-message-img') {
       const { src, alt, naturalWidth, naturalHeight } = (evt.target as HTMLImageElement);
@@ -123,7 +123,7 @@ function WidgetLayout({
           profileAvatar={profileAvatar}
           toggleChat={onToggleConversation}
           showCloseButton={showCloseButton}
-          disabledInput={dissableInput}
+          disabledInput={disableInput}
           autofocus={autofocus}
           titleAvatar={titleAvatar}
           className={showChat ? 'active' : 'hidden'}

@@ -1,6 +1,6 @@
 {
   "name": "@qinzhengquan/react-chat-widget",
-  "version": "3.1.1",
+  "version": "3.1.5",
   "description": "Chat web widget for React apps - Forked by QZQ",
   "main": "lib/index.js",
   "repository": "git@github.com:robertqin86/react-chat-widget.git",

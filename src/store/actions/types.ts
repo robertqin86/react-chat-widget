@@ -30,12 +30,14 @@ export interface AddUserMessage {
   type: typeof ADD_NEW_USER_MESSAGE;
   text: string;
   id?: string;
+  date?: Date;
 }
 
 export interface AddResponseMessage {
   type: typeof ADD_NEW_RESPONSE_MESSAGE;
   text: string;
   id?: string;
+  date?: Date;
 }
 
 export interface ToggleMsgLoader {
@@ -46,6 +48,7 @@ export interface AddLinkSnippet {
   type: typeof ADD_NEW_LINK_SNIPPET;
   link: LinkParams;
   id?: string;
+  date?: Date;
 }
 
 export interface RenderCustomComponent {
@@ -54,6 +57,7 @@ export interface RenderCustomComponent {
   props: any;
   showAvatar: boolean;
   id?: string;
+  date?: Date;
 }
 
 export interface DropMessages {
