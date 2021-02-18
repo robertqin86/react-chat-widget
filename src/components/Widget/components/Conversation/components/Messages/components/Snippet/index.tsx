@@ -1,14 +1,15 @@
-import React from 'react';
-import format from 'date-fns/format';
+import React from "react";
+// import format from "date-fns/format";
+import moment from "moment";
 
-import { Link } from 'src/store/types';
+import { Link } from "src/store/types";
 
-import './styles.scss';
+import "./styles.scss";
 
 type Props = {
   message: Link;
   showTimeStamp: boolean;
-}
+};
 
 function Snippet({ message, showTimeStamp }: Props) {
   return (
@@ -21,7 +22,16 @@ function Snippet({ message, showTimeStamp }: Props) {
           </a>
         </div>
       </div>
-      {showTimeStamp && <span className="rcw-timestamp">{format(message.timestamp, 'hh:mm')}</span>}
+      {showTimeStamp && (
+        <span className="rcw-timestamp">
+          {moment(message.timestamp).fromNow()}
+        </span>
+      )}
+      {/*{showTimeStamp && (*/}
+      {/*  <span className="rcw-timestamp">*/}
+      {/*    {format(message.timestamp, "hh:mm")}*/}
+      {/*  </span>*/}
+      {/*)}*/}
     </div>
   );
 }
