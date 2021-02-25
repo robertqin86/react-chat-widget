@@ -69,7 +69,9 @@ function Widget({
     if (!handleSubmit) {
       dispatch(addUserMessage(userInput));
     }
-    handleNewUserMessage(userInput);
+    if (handleNewUserMessage) {
+      handleNewUserMessage(userInput);
+    }
   };
 
   const onQuickButtonClicked = (event, value) => {

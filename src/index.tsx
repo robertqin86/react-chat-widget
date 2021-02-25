@@ -83,7 +83,7 @@ function ConnectedWidget({
 const defaultProps = {
   title: 'Welcome',
   subtitle: 'This is your chat subtitle',
-  senderPlaceHolder: 'Type a message...',
+  senderPlaceHolder: 'Type a message... Press enter to send.',
   showCloseButton: true,
   fullScreenMode: false,
   autofocus: true,
